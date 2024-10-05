@@ -10,9 +10,9 @@ void yyerror(const char *s);
 }
 
 %token <dval> NUMBER  // NUMBER 토큰이 double형 값임을 정의합니다.
-%token PLUS MINUS MUL DIV LBRACE RBRACE // 이런 토큰도 있음을 의미합니다.
+%token PLUS MINUS MUL DIV LBRACE RBRACE // 이런 토큰도 있음을 정의합니다.
 
-%type <dval> start expr term factor   // 각 비단말 기호들도 float형으로 처리합니다.
+%type <dval> start expr term factor   // 각 비단말 기호들도 double형으로 처리합니다.
 
 %%
 start  : expr               { printf("%lf\n", $1); }
